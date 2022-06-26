@@ -1,7 +1,7 @@
 FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 
 # set apt-get source to japanese mirror
-RUN sed -i.bak -r 's!http://(security|archive).ubuntu.com/ubuntu!ftp://ftp.jaist.ac.jp/pub/Linux/ubuntu/!' /etc/apt/sources.list
+# RUN sed -i.bak -r 's!http://(security|archive).ubuntu.com/ubuntu!ftp://ftp.jaist.ac.jp/pub/Linux/ubuntu/!' /etc/apt/sources.list
 
 # for avoid error in apt-get update 
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub \ 
