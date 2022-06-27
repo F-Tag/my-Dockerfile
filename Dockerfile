@@ -73,3 +73,10 @@ RUN pyenv global ${PYTHON_VERSION}
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ENV PATH="${HOME}/.poetry/bin:${PATH}"
 RUN poetry config virtualenvs.in-project true
+
+# numpy single thread
+ENV OMP_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+ENV VECLIB_MAXIMUM_THREADS=1
+ENV NUMEXPR_NUM_THREADS=1
