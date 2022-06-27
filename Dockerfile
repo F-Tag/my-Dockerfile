@@ -42,6 +42,8 @@ RUN apt-get update -y && \
     liblzma-dev \
     tzdata \
     language-pack-ja \
+    unzip \
+    zip \
     && \
     apt-get autoremove -y && \
     apt-get clean && \
