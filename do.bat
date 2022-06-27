@@ -1,5 +1,5 @@
 REM build
-docker build -t cuda102 .
+docker build -t ftag77/cuda102 .
 
 REM run with GPUs
-docker run -d --name cuda102 --gpus all -it ftag77/cuda102 /bin/bash
+docker run -d --name cuda102 --gpus all --shm-size=2g -it ftag77/cuda102 /bin/bash
