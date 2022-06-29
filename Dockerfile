@@ -72,7 +72,8 @@ RUN pyenv global ${PYTHON_VERSION}
 # setup poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ENV PATH="${HOME}/.poetry/bin:${PATH}"
-RUN poetry config virtualenvs.in-project true
+RUN poetry config virtualenvs.in-project true && \
+    pip install poetry-dynamic-versioning
 
 # numpy single thread
 ENV OMP_NUM_THREADS=1
